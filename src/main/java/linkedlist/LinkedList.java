@@ -86,12 +86,19 @@ public class LinkedList {
     }
 
     private int size(){
-        Node temp = head;
-        int i = 0;
-        while (temp != null) {
-            temp = temp.next;
-            ++i;
+        Node dummy = head;
+        int size = 0;
+        while(dummy != null){
+        System.out.println("iteration");
+        if(dummy.next != null){
+            dummy = dummy.next.next;
+            size += 2;
         }
+        else {
+            dummy = dummy.next;
+            size+=1;
+        }
+    }
         return i;
     }
 }
